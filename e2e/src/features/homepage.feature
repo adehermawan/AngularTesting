@@ -13,3 +13,8 @@ Feature: Homepage
     Given I am on the angular.io site
     When I click "Features" menu
     Then I should on the Features & Benefits page
+
+  Scenario: Check events menu
+    Given I am on the angular.io site
+    When I click "Events" menu
+    Then I should on the Events page

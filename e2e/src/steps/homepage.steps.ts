@@ -26,6 +26,10 @@ defineSupportCode(({Given, When, Then, Before}) => {
     () => app.getFeaturesPageTitle()
       .then(elems => expect(elems).to.equal('FEATURES & BENEFITS')));
 
+  Then('I should on the Events page',{timeout: 60 * 1000},
+    () => app.getEventsPageTitle()
+      .then(elems => expect(elems).to.equal('https://angular.io/events')));
+
   When('I click button Get Started',
   () => app.clickButtonGetStarted());
 

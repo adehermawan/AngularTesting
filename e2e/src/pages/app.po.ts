@@ -26,6 +26,10 @@ export class AppPage {
     return element(by.id('features--benefits')).getText();
   }
 
+  public getEventsPageTitle() {
+    return browser.getCurrentUrl();
+  }
+
   public clickButtonGetStarted(){
     var btn = element(by.cssContainingText('.button','Get Started'));
     return btn.click();
