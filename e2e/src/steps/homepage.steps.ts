@@ -19,4 +19,18 @@ defineSupportCode(({Given, When, Then, Before}) => {
     () => app.getSearchResultItems()
       .then(elems => expect(elems.length).to.be.greaterThan(0)));
 
+  When('I click {string} menu',{timeout: 60 * 1000},
+    (text: string) => app.clickMenu(text));
+
+  Then('I should on the Features & Benefits page',{timeout: 60 * 1000},
+    () => app.getFeaturesPageTitle()
+      .then(elems => expect(elems).to.equal('FEATURES & BENEFITS')));
+
+  When('I click button Get Started',
+  () => app.clickButtonGetStarted());
+
+  Then('I should on tutorial page',
+  () => app.getTutorialPageTitle()
+    .then(elems => expect(elems).to.equal('Getting started')));
+
 });

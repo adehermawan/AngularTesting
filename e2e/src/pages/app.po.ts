@@ -14,8 +14,25 @@ export class AppPage {
 
   public getSearchResultItems() {
     const condition = until.elementsLocated(by.css('.search-results .search-result-item'));
-
     return browser.wait(condition, 5000);
+  }
+
+  public clickMenu(text: string){
+    var menu = element(by.cssContainingText('.nav-link-inner',text));
+    return menu.click();
+  }
+
+  public getFeaturesPageTitle() {
+    return element(by.id('features--benefits')).getText();
+  }
+
+  public clickButtonGetStarted(){
+    var btn = element(by.cssContainingText('.button','Get Started'));
+    return btn.click();
+  }
+
+  public getTutorialPageTitle() {
+    return element(by.id('getting-started')).getText();
   }
 
 }
